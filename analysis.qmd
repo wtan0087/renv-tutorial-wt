@@ -4,4 +4,25 @@ format: html
 editor: visual
 ---
 
-## Quarto
+```{r}
+install.packages("palmerpenguins")
+install.packages("ggplot2")
+library(palmerpenguins)
+library(ggplot2)
+
+summary(penguins)
+
+penguin_plot = ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point() + 
+  theme_minimal()
+
+
+```
+
+```{r}
+#| fig-cap: plot of penguins
+#| label: plot
+penguin_plot
+```
+
+\
